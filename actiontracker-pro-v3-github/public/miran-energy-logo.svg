@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="84" viewBox="0 0 320 84">
+  <rect width="320" height="84" rx="14" fill="#fff"/>
+  <circle cx="40" cy="42" r="27" fill="#114866"/>
+  <path d="M21 50 32 28 41 45 51 24 61 51" fill="none" stroke="#3aa56b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="82" y="39" font-family="Arial" font-weight="700" font-size="25" fill="#15384d">MIRAN</text>
+  <text x="82" y="61" font-family="Arial" font-weight="600" font-size="18" fill="#3aa56b">ENERGY</text>
+</svg>
