@@ -1,0 +1,4 @@
+import { NextResponse } from "next/server";
+import { requireUser } from "../../../../../../lib/server-supabase";
+import { getBoxEmbed } from "../../../../../../lib/box";
+export async function GET(request,{params}){const auth=await requireUser(request);if(auth.error)return NextResponse.json({error:auth.error},{status:auth.status});const {fileId}=await params;try{const file=await getBoxEmbed(fileId);let embed=file.expiring_embed_link?.url||null;if(embed){const join=embed.includes("?")?"&":"?";embed=`${embed}${join}showDownload=true&showAnnotations=true`;}return NextResponse.json({file:{id:file.id,name:file.name,web_url:file.web_url,file_version_id:file.file_version?.id||null,permissions:file.permissions||null},embed_url:embed})}catch(e){return NextResponse.json({error:e.message},{status:502})}}
